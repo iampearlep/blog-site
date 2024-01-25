@@ -98,7 +98,7 @@ const Navbar = () => {
                 </div>
             </div>
           {isToggle && (
-            <div className="fixed top-0 right-0 h-full  w-full bg-white z-30 flex flex-col justify-start items-start">
+            <div className="fixed top-0 right-0 h-full  w-full bg-[#b5c1bc] z-30 flex flex-col justify-start items-start">
              <div className="flex flex-row justify-between items-center ">
                 <h1 className={`${fraunces.className} absolute top-7 left-5 text-4xl font-semibold`}><Link href="/" className="cursor-pointer">glitch.</Link></h1>
                 <button onClick={handleToggle} className="absolute top-9 right-5">
@@ -110,35 +110,35 @@ const Navbar = () => {
                   <Link
                     href="/"
                     onClick={handleToggle}
-                    className="cursor-pointer border-b-2 border-black w-full py-2"
+                    className="cursor-pointer border-b-2 border-[#898e8c] w-full py-2"
                   >
                     Home
                   </Link>
                   <Link
                     href="/shop"
                     onClick={handleToggle}
-                    className="cursor-pointer border-b-2 border-black w-full py-2"
+                    className="cursor-pointer border-b-2 border-[#898e8c] w-full py-2"
                   >
                     Architecture
                   </Link>
                   <Link
                     href="/"
                     onClick={handleToggle}
-                    className="cursor-pointer border-b-2 border-black w-full py-2"
+                    className="cursor-pointer border-b-2 border-[#898e8c] w-full py-2"
                   >
                     Travel
                   </Link>
                   <Link
                     href="/"
                     onClick={handleToggle}
-                    className="cursor-pointer border-b-2 border-black w-full py-2"
+                    className="cursor-pointer border-b-2 border-[#898e8c] w-full py-2"
                   >
                     Art & Culture
                   </Link>
                   <Link
                     href="/"
                     onClick={handleToggle}
-                    className="cursor-pointer border-b-2 border-black w-full"
+                    className="cursor-pointer border-b-2 border-[#898e8c] w-full"
                   >
                     Shop
                   </Link>
