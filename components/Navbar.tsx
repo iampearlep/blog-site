@@ -21,7 +21,7 @@ const Navbar = () => {
               glitch.
             </Link>
           </div>
-          <div className="hidden md:flex flex-row justify-between items-center border-b-2 border-[#eeeeee] py-2">
+          <div className="hidden md:flex flex-row justify-between items-center text-lg font-semibold border-b-2 border-[#eeeeee] py-2">
             <div>
             <div className="hidden md:flex flex-row gap-x-8">
             <Link href="/" className="cursor-pointer">
