@@ -1,12 +1,15 @@
 import React from 'react'
 import Link from "next/link";
+import { Fraunces } from "next/font/google";
+
+export const fraunces = Fraunces({ subsets: ["latin"] });
 
 const Footer = () => {
   return (
     <div className='pt-20 '>
         <div className='px-6 pt-5 pb-20 bg-[#3a423e] flex flex-col gap-y-6'>
-            <div>
-                <h2 className='text-white text-4xl font-bold py-6'>glitch.</h2>
+            <div className='py-4'>
+                <h2 className={`${fraunces.className} text-white text-4xl font-extrabold pb-2`}>glitch.</h2>
                 <hr className='border border-[#4d5451]' />
             </div>
             <div className='grid grid-cols-2 gap-y-10 gap-x-20 md:flex md:flex-row md:gap-x-44 text-white'>
