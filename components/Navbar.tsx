@@ -27,13 +27,13 @@ const Navbar = () => {
             <Link href="/" className="cursor-pointer">
               Home
             </Link>
-            <Link href="/shop" className="cursor-pointer">
+            <Link href="/architecture" className="cursor-pointer">
               Architecture
             </Link>
-            <Link href="/" className="cursor-pointer">
+            <Link href="/travel" className="cursor-pointer">
               Travel
             </Link>
-            <Link href="/" className="cursor-pointer">
+            <Link href="/art-culture" className="cursor-pointer">
               Art & Culture
             </Link>
             <Link href="/" className="cursor-pointer">
@@ -115,21 +115,21 @@ const Navbar = () => {
                     Home
                   </Link>
                   <Link
-                    href="/shop"
+                    href="/architecture"
                     onClick={handleToggle}
                     className="cursor-pointer border-b-2 border-[#898e8c] w-full py-2"
                   >
                     Architecture
                   </Link>
                   <Link
-                    href="/"
+                    href="/travel"
                     onClick={handleToggle}
                     className="cursor-pointer border-b-2 border-[#898e8c] w-full py-2"
                   >
                     Travel
                   </Link>
                   <Link
-                    href="/"
+                    href="/art-culture"
                     onClick={handleToggle}
                     className="cursor-pointer border-b-2 border-[#898e8c] w-full py-2"
                   >

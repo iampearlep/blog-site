@@ -10,17 +10,9 @@ import Img9 from '@/public/images/travel-05.jpg'
 import Img10 from '@/public/images/art-culture-03.jpg'
 import Img11 from '@/public/images/architecture-02.jpg'
 import Img12 from '@/public/images/travel-04.jpg'
-import { StaticImageData } from 'next/image'
+import { CardData } from '@/types'
 
-export interface CardProps {
-    id: number;
-    title: string;
-    category: string;
-    description: string;
-    image: StaticImageData;
-}
-
-export const data: CardProps[]  = [
+export const data: CardData[]  = [
     {
         id: 0,
         title: "A Spanish-Inspired Countryside Haven: The Radiant Transformation of a Heritage Home",

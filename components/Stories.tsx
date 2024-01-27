@@ -7,17 +7,9 @@ const Stories = () => {
   return (
     <div className='px-6 py-5'>
         <div className='grid grid-cols-2 gap-5 md:gap-10'>
-            {data.slice(3,11).map((item) => {
+            {data.slice(3,11).map((post) => {
                 return (
-                  <Link href={`/`} className=''>
-                    <Card
-            id={item.id}
-            title={item.title}
-            image={item.image}
-            category={item.category}
-            description={item.description}
-          /> 
-                  </Link>
+                  <Card key={post.id} data={post} />
                 )
             })}
         </div>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Fraunces } from "next/font/google";
 import archImg from "@/public/images/architecture-03.jpg";
 import { data } from "@/data/data";
-import Card from "./Card";
+import Card from "@/components/Card";
 
 export const fraunces = Fraunces({ subsets: ["latin"] });
 
@@ -39,7 +39,14 @@ const Banner = () => {
           </div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-1 gap-5 md:col-start-10 md:col-end-13">
-          {data.slice(1,3).map((post) => {
+          {data.slice(5, 6).map((post) => {
+            return (
+              <div>
+                <Card key={post.id} data={post} />
+              </div>
+            )
+          })}
+          {data.slice(10, 11).map((post) => {
             return (
               <div>
                 <Card key={post.id} data={post} />

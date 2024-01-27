@@ -1,13 +1,17 @@
 import React from 'react'
 import Image from "next/image";
-import { CardProps } from '@/data/data';
+import { CardData } from '@/types';
+ interface CardProps {
+  data: CardData;
+ }
 
-const Card: React.FC<CardProps> = ({id, title, category, description, image}) => {
+
+const Card: React.FC<CardProps> = ({data}) => {
   return (
-    <div key={id}>
+    <div key={data.id}>
                 <div>
                 <Image
-                 src={image}
+                 src={data.image}
                  height={1000}
                  width={1920}
                  priority={true}
@@ -16,9 +20,9 @@ const Card: React.FC<CardProps> = ({id, title, category, description, image}) =>
                />
                 </div>
                 <div className='py-3 flex flex-col gap-y-2'>
-                 <p className='uppercase text-[0.65rem] font-semibold'>{category}</p>
-                 <h2 className='text-sm md:text-base font-semibold'>{title}</h2>
-                 <p className='text-xs md:text-sm font-medium'>{description}.</p>
+                 <p className='uppercase text-[0.65rem] font-semibold'>{data.category}</p>
+                 <h2 className='text-sm md:text-base font-semibold'>{data.title}</h2>
+                 <p className='text-xs md:text-sm font-medium'>{data.description}.</p>
                 </div>
                  </div>
   )

@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { Fraunces } from "next/font/google";
-import archImg from "@/public/images/architecture-03.jpg";
+import artImg from "@/public/images/art-culture-04.jpg";
 import { data } from "@/data/data";
-import Card from "./Card";
+import Card from "@/components/Card";
 
 export const fraunces = Fraunces({ subsets: ["latin"] });
 
@@ -14,7 +14,7 @@ const Banner = () => {
         <div className="grid md:col-start-1 md:col-end-10">
           <div>
             <Image
-              src={archImg}
+              src={artImg}
               height={1000}
               width={1920}
               priority={true}
@@ -24,22 +24,28 @@ const Banner = () => {
           </div>
           <div className="py-5 flex flex-col gap-y-2">
             <p className="uppercase text-[0.65rem] font-semibold">
-              Architecture
+              Travel
             </p>
             <h2
               className={`${fraunces.className} text-[1.35rem] md:text-[1.65rem] font-medium pr-0 md:pr-5`}
             >
-              A Spanish-Inspired Countryside Haven: The Radiant Transformation
-              of a Heritage Home
+             1790 Mornington Peninsula Brews Excellence with In-Demand Coffee
             </h2>
             <p className="text-xs md:text-sm font-medium">
-              Step into a world where heritage meets spanish flair in this
-              countryside haven, a radiant raven revamp of a historic home.
+                1790 is setting high standards in the local coffee scene with it's much sought after, top-quality blends.
+             
             </p>
           </div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-1 gap-5 md:col-start-10 md:col-end-13">
-          {data.slice(1,3).map((post) => {
+          {data.slice(3, 4).map((post) => {
+            return (
+              <div>
+                <Card key={post.id} data={post} />
+              </div>
+            )
+          })}
+          {data.slice(8, 9).map((post) => {
             return (
               <div>
                 <Card key={post.id} data={post} />
