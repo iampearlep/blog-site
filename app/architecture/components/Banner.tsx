@@ -4,6 +4,7 @@ import { Fraunces } from "next/font/google";
 import archImg from "@/public/images/architecture-03.jpg";
 import { data } from "@/data/data";
 import Card from "@/components/Card";
+import Link from "next/link";
 
 export const fraunces = Fraunces({ subsets: ["latin"] });
 
@@ -12,6 +13,7 @@ const Banner = () => {
     <div className="px-6 py-5">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
         <div className="grid md:col-start-1 md:col-end-10">
+          <Link href={`/article/1`}>
           <div>
             <Image
               src={archImg}
@@ -37,6 +39,7 @@ const Banner = () => {
               countryside haven, a radiant raven revamp of a historic home.
             </p>
           </div>
+          </Link>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-1 gap-5 md:col-start-10 md:col-end-13">
           {data.slice(5, 6).map((post) => {

@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from "next/image";
 import { CardData } from '@/types';
+import Link from "next/link";
  interface CardProps {
   data: CardData;
  }
@@ -8,6 +9,7 @@ import { CardData } from '@/types';
 
 const Card: React.FC<CardProps> = ({data}) => {
   return (
+   <Link href={`/article/${data.id}`}>
     <div key={data.id}>
                 <div>
                 <Image
@@ -25,6 +27,7 @@ const Card: React.FC<CardProps> = ({data}) => {
                  <p className='text-xs md:text-sm font-medium'>{data.description}.</p>
                 </div>
                  </div>
+   </Link>
   )
 }
 
