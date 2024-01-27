@@ -1,8 +1,12 @@
 import { defineField, defineType } from "sanity";
+import { format, parseISO } from 'date-fns'
+import { BookIcon } from '@sanity/icons'
+import authorType from './author'
 
 export default defineType({
   name: "post",
   type: "document",
+  icon: BookIcon,
   title: "Post",
   fields: [
     defineField({
@@ -21,6 +25,16 @@ export default defineType({
         isUnique: (value, context) => context.defaultIsUnique(value, context),
       },
     }),
+    defineField( {
+      name: 'excerpt',
+      type: 'text',
+      title: 'Excerpt'
+    }),
+   defineField( {
+      name: 'description',
+      type: 'text',
+      title: 'Description'
+    }),
     defineField({
       name: 'content',
       type: "array",
@@ -35,12 +49,6 @@ export default defineType({
             hotspot: true,
           },
           fields:[
-            {
-              name: "caption",
-              type: 'string',
-              title: "Image caption",
-              description: "caption displayed below the image",
-            },
             {
               name: 'alt',
               type: 'string',
@@ -60,11 +68,40 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'category',
+      type: 'reference',
+      title: 'Category',
+      to: [
+        {
+          type: 'category',
+        },
+      ]
+    }),
+    defineField({
       name: 'date',
       title: 'Date',
       type: 'datetime',
       initialValue: () => new Date().toISOString(),
     }),
-    
-  ]
+    defineField({
+      name: 'author',
+      title: 'Author',
+      type: 'reference',
+      to: [{ type: authorType.name }],
+    }),
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      date: 'date',
+      media: 'coverImage',
+    },
+    prepare({ title, media, date }) {
+      const subtitles = [
+        date && `on ${format(parseISO(date), 'LLL d, yyyy')}`,
+      ].filter(Boolean)
+
+      return { title, media, subtitle: subtitles.join(' ') }
+    },
+  },
 })
