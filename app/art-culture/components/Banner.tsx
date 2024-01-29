@@ -25,16 +25,33 @@ description,
   return posts;
 }
 
+async function getSinglePostData(){
+  const query = `*[_type == "post"][9]{
+    _id,
+    title,
+    excerpt,
+  description,
+    date,
+    "slug": slug.current,
+  "category": category -> name,
+  "coverImage": coverImage.asset -> url,
+  }`
+  const singlePosts = await client.fetch(query);
+  return singlePosts;
+}
+
+
 const Banner = async() => {
   const posts = await getPostData();
+  const singlePost = await getSinglePostData();
   return (
     <div className="px-6 py-5">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
         <div className="grid md:col-start-1 md:col-end-10">
-          <Link href={`/article/2`}>
+        <Link href={`/article/${singlePost.slug}`}>
           <div>
             <Image
-              src={artImg}
+              src={singlePost.coverImage}
               height={1000}
               width={1920}
               priority={true}
@@ -44,15 +61,15 @@ const Banner = async() => {
           </div>
           <div className="py-5 flex flex-col gap-y-2">
             <p className="uppercase text-[0.65rem] font-semibold">
-             Art & Culture
+              {singlePost.category}
             </p>
             <h2
               className={`${fraunces.className} text-[1.35rem] md:text-[1.65rem] font-medium pr-0 md:pr-5`}
             >
-             Minimum Resources, Maximum Impact: Sustainable Fashion Mastery by Gina and Lauren Schultz
+            {singlePost.title}
             </h2>
             <p className="text-xs md:text-sm font-medium">
-            Reshaping the fashion industry, proving that limited resources can still result in high impact sustainable fashion line.
+             {singlePost.excerpt}
             </p>
           </div>
           </Link>
@@ -63,7 +80,7 @@ const Banner = async() => {
                 <Card key={post._id} data={post} />
             )
           })}
-          {posts.slice(7, 8).map((post: Posts) => {
+          {posts.slice(3, 4).map((post: Posts) => {
             return (
             <Card key={post._id} data={post} />
             )
