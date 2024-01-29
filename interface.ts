@@ -17,7 +17,10 @@ export interface Posts {
     slug: string;
     category: string;
     coverImage: any;
-    contentImage: any;
+    contentImage1: any;
+    contentImage2: any;
+    contentImage3: any;
+    contentImage4: any;
     contentTextP1: string;
     contentTextP2: string;
     contentTextP3: string;
