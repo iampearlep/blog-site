@@ -32,7 +32,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col text-sm gap-y-3 md:gap-y-5">
             <Link href="/" className="cursor-pointer font-semibold text-[#898e8c] uppercase text-base">
-              Shop
+            Food
             </Link>
             <Link href="/" className="cursor-pointer">
              All

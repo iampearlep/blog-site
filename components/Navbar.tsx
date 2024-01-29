@@ -37,7 +37,7 @@ const Navbar = () => {
               Art & Culture
             </Link>
             <Link href="/" className="cursor-pointer">
-              Shop
+              Food
             </Link>
           </div>
             </div>
@@ -45,7 +45,7 @@ const Navbar = () => {
             <div className="hidden md:flex flex-row items-center justify-center  gap-x-8">
             <button className="">
               <Link href="">
-                Cart
+              About
               </Link>
             </button>
             <button className="relative">
@@ -83,7 +83,7 @@ const Navbar = () => {
                 <div className="flex flex-row gap-x-4">
                 <button className="">
               <Link href="">
-                Cart
+              About
               </Link>
             </button>
             <button className="relative">
@@ -140,7 +140,7 @@ const Navbar = () => {
                     onClick={handleToggle}
                     className="cursor-pointer border-b-2 border-[#898e8c] w-full"
                   >
-                    Shop
+                    Food
                   </Link>
                 </div>
               </div>
