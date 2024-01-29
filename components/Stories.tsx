@@ -23,7 +23,12 @@ const Stories = async() => {
   return (
     <div className='px-6 py-5'>
        <div className='grid md:grid-cols-12 md:gap-x-8'>
-        <div className='hidden md:grid col-span-1 col-end-4 text-center'>
+        <div className='hidden md:grid col-start-1 col-end-4 text-center'>
+        <div className="bg-[#eeeeee] px-6">
+            <div className="flex justify-center items-center w-full h-full">
+            <p className="text-xs md:text-sm text-center text-gray-300 capitalize">Sponsored area</p>
+            </div>
+            </div>
         </div>
         <div className='grid  md:col-start-4 md:col-end-13 md:gap-10'>
           <div className='grid grid-cols-2 gap-5 '>

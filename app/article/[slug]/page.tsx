@@ -1,9 +1,10 @@
 import { client } from "@/app/lib/sanity.client";
 import { Posts } from "@/interface";
 import Image from "next/image";
-// import { Fraunces } from "next/font/google";
+ import { Fraunces } from "next/font/google";
 
 // export const fraunces = Fraunces({ subsets: ["latin"] }); ${fraunces.className} 
+export const fraunces = Fraunces({ subsets: ["latin"] });
 
 
 async function getPostDetails(slug: any){
@@ -64,8 +65,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
               <p className="border-b border-black">{post.category}</p>
               <p className="text-gray-400">January 28, 2023</p>
             </div>
-            <h1  className={` text-[1.30rem] md:text-4xl font-light`}>{post.title}</h1>
-            <p  className={` md:w-11/12 text-base md:text-[1.30rem] font-light text-[#2d3330]`}>{post.description}</p>
+            <h1  className={`${fraunces.className}  text-[1.30rem] md:text-4xl font-light`}>{post.title}</h1>
+            <p  className={`${fraunces.className}  md:w-11/12 text-base md:text-[1.30rem] font-light text-[#2d3330]`}>{post.description}</p>
           </div>
         </div>
         <div className=" mx-auto py-20">
@@ -138,7 +139,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             <p>{post.contentTextP2}</p>
            </div>
             <div>
-            <h3 className={` text-xl md:text-2xl font-normal py-3 md:py-6`}>{post.contentH1}</h3>
+            <h3 className={`${fraunces.className}  text-xl md:text-2xl font-normal py-3 md:py-6`}>{post.contentH1}</h3>
             <p className="py-4">{post.contentTextP3}</p>
               <p className="py-4"><span className="font-semibold">{post.contentBullet1}</span> {post.contentBullet1Text}</p>
               <p className="py-4"><span className="font-semibold">{post.contentBullet2}</span>{post.contentBullet2Text}</p>
@@ -146,15 +147,15 @@ export default async function Page({ params }: { params: { slug: string } }) {
               <p className="py-4"><span className="font-semibold">{post.contentBullet4}</span>{post.contentBullet4Text}</p>
             </div>
             <div className="flex flex-col gap-y-6 ">
-            <h3 className={`text-xl md:text-2xl py-3`}>{post.contentH2}</h3>
+            <h3 className={`${fraunces.className} text-xl md:text-2xl py-3`}>{post.contentH2}</h3>
             <p>{post.contentTextP4}</p>
             <p>{post.contentTextP5}</p>
             </div>
           </div>
           <div className="hidden md:grid md:col-start-10 md:col-end-13">
-            <div className="bg-gray-200 px-6">
+            <div className="bg-[#eeeeee] px-6">
             <div className="flex justify-center items-center w-full h-full">
-            <p className="text-xs md:text-sm text-center text-gray-400 capitalize">Sponsored area</p>
+            <p className="text-xs md:text-sm text-center text-gray-300 capitalize">Sponsored area</p>
             </div>
             </div>
           </div>
