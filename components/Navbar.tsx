@@ -18,7 +18,7 @@ const Navbar = () => {
         <div className="flex flex-col mx-auto w-full px-2 gap-y-4">
           <div className="hidden md:block text-4xl font-extrabold text-center pb-5">
             <Link href="/" className={`${fraunces.className} cursor-pointer` }>
-              glitch.
+              Explore.
             </Link>
           </div>
           <div className="hidden md:flex flex-row justify-between items-center text-lg font-semibold border-b-2 border-[#eeeeee] py-2">
@@ -67,7 +67,7 @@ const Navbar = () => {
             <div className="flex flex-col mx-auto w-full px-2 gap-y-3">
                 <div className="text-3xl font-extrabold text-center pb-2">
                 <Link href="/" className={`${fraunces.className} text-3xl font-semibold cursor-pointer` }>
-                 glitch.
+                 Explore.
                 </Link>
                 </div>
                 <div className="w-full flex flex-row justify-between items-center border-b-2 border-[#eeeeee] py-2 text-sm">
@@ -100,7 +100,7 @@ const Navbar = () => {
           {isToggle && (
             <div className="fixed top-0 right-0 h-full  w-full bg-[#b5c1bc] z-30 flex flex-col justify-start items-start">
              <div className="flex flex-row justify-between items-center ">
-                <h1 className={`${fraunces.className} absolute top-7 left-5 text-4xl font-semibold`}><Link href="/" className="cursor-pointer">glitch.</Link></h1>
+                <h1 className={`${fraunces.className} absolute top-7 left-5 text-4xl font-semibold`}><Link href="/" className="cursor-pointer">Explore.</Link></h1>
                 <button onClick={handleToggle} className="absolute top-9 right-5">
               <p>Close Menu</p>
               </button>

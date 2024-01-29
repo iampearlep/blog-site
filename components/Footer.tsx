@@ -9,7 +9,7 @@ const Footer = () => {
     <div className='pt-20 '>
         <div className='px-6 pt-5 pb-20 bg-[#3a423e] flex flex-col gap-y-6'>
             <div className='py-4'>
-                <h2 className={`${fraunces.className} text-white text-4xl font-extrabold pb-2`}>glitch.</h2>
+                <h2 className={`${fraunces.className} text-white text-4xl font-extrabold pb-2`}>Explore.</h2>
                 <hr className='border border-[#4d5451]' />
             </div>
             <div className='grid grid-cols-2 gap-y-10 gap-x-20 md:flex md:flex-row md:gap-x-44 text-white'>
