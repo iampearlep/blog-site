@@ -2,13 +2,31 @@ import React from "react";
 import Image from "next/image";
 import { Fraunces } from "next/font/google";
 import artImg from "@/public/images/art-culture-02.jpg";
-import { data } from "@/data/data";
 import Card from "@/components/Card";
 import Link from "next/link";
 
+
+import { client } from "@/app/lib/sanity.client";
+import { Posts } from "@/interface";
 export const fraunces = Fraunces({ subsets: ["latin"] });
 
-const Banner = () => {
+async function getPostData() {
+  const query = `*[_type == "post"][0...12] {
+  _id,
+  title,
+  excerpt,
+description,
+  date,
+  "slug": slug.current,
+"category": category -> name,
+"coverImage": coverImage.asset -> url,
+  }`;
+  const posts = await client.fetch(query);
+  return posts;
+}
+
+const Banner = async() => {
+  const posts = await getPostData();
   return (
     <div className="px-6 py-5">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
@@ -40,18 +58,14 @@ const Banner = () => {
           </Link>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-1 gap-5 md:col-start-10 md:col-end-13">
-          {data.slice(4, 5).map((post) => {
+          {posts.slice(4, 5).map((post: Posts) => {
             return (
-              <div>
-                <Card key={post.id} data={post} />
-              </div>
+                <Card key={post._id} data={post} />
             )
           })}
-          {data.slice(7, 8).map((post) => {
+          {posts.slice(7, 8).map((post: Posts) => {
             return (
-              <div>
-                <Card key={post.id} data={post} />
-              </div>
+            <Card key={post._id} data={post} />
             )
           })}
         </div>

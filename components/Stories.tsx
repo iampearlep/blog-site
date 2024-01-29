@@ -1,9 +1,25 @@
 import React from 'react'
 import Card from './Card'
-import { data } from "@/data/data";
-import Link from 'next/link';
+import { client } from "@/app/lib/sanity.client";
+import { Posts } from "@/interface";
 
-const Stories = () => {
+async function getPostData() {
+  const query = `*[_type == "post"][0...12] {
+  _id,
+  title,
+  excerpt,
+description,
+  date,
+  "slug": slug.current,
+"category": category -> name,
+"coverImage": coverImage.asset -> url,
+  }`;
+  const posts = await client.fetch(query);
+  return posts;
+}
+
+const Stories = async() => {
+  const posts = await getPostData();
   return (
     <div className='px-6 py-5'>
        <div className='grid md:grid-cols-12 md:gap-x-8'>
@@ -11,9 +27,9 @@ const Stories = () => {
         </div>
         <div className='grid  md:col-start-4 md:col-end-13 md:gap-10'>
           <div className='grid grid-cols-2 gap-5 '>
-          {data.slice(3,11).map((post) => {
+          {posts.slice(3,11).map((post: Posts) => {
                 return (
-                  <Card key={post.id} data={post} />
+                  <Card key={post._id} data={post} />
                 )
             })}
           </div>

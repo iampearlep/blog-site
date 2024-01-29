@@ -1,19 +1,19 @@
 import React from 'react'
 import Image from "next/image";
-import { CardData } from '@/types';
+import { Posts } from '@/interface';
 import Link from "next/link";
  interface CardProps {
-  data: CardData;
+  data: Posts;
  }
 
 
 const Card: React.FC<CardProps> = ({data}) => {
   return (
-   <Link href={`/article/${data.id}`}>
-    <div key={data.id}>
+   <Link href={`/article/${data.slug}`}>
+    <div key={data._id}>
                 <div>
                 <Image
-                 src={data.image}
+                 src={data.coverImage}
                  height={1000}
                  width={1920}
                  priority={true}
@@ -24,7 +24,7 @@ const Card: React.FC<CardProps> = ({data}) => {
                 <div className='py-3 flex flex-col gap-y-2'>
                  <p className='uppercase text-[0.65rem] font-semibold'>{data.category}</p>
                  <h2 className='text-sm md:text-base font-semibold'>{data.title}</h2>
-                 <p className='text-xs md:text-sm font-medium'>{data.description}.</p>
+                 <p className='text-xs md:text-sm font-medium'>{data.excerpt}.</p>
                 </div>
                  </div>
    </Link>
