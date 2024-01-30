@@ -49,7 +49,7 @@ const Navbar = () => {
               </Link>
             </button>
             <button className="relative">
-              <Link href="/cart">
+              <Link href="/">
                <div className="flex flex-row gap-x-1 justify-center items-center">
                <IoSearch  />
                 Search
@@ -87,7 +87,7 @@ const Navbar = () => {
               </Link>
             </button>
             <button className="relative">
-              <Link href="/cart">
+              <Link href="/">
                <div className="flex flex-row gap-x-1 justify-center items-center">
                <IoSearch  />
                 Search
