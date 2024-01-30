@@ -11,16 +11,17 @@ import { Posts } from "@/interface";
 export const fraunces = Fraunces({ subsets: ["latin"] });
 
 async function getPostData() {
-  const query = `*[_type == "post"][0...12] {
-  _id,
-  title,
-  excerpt,
-description,
+  const query = `*[_type == "post" && category._ref in *[_type=="category" && name=="Art & Culture"]._id]{
+    _id,
+    title,
+    excerpt,
+  description,
   date,
   "slug": slug.current,
-"category": category -> name,
-"coverImage": coverImage.asset -> url,
-  }`;
+  "category": category -> name,
+  "coverImage": coverImage.asset -> url,
+  }
+  `;
   const posts = await client.fetch(query);
   return posts;
 }
@@ -75,18 +76,25 @@ const Banner = async() => {
           </Link>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-1 gap-5 md:col-start-10 md:col-end-13">
-          {posts.slice(4, 5).map((post: Posts) => {
+          {posts.slice(1, 3).map((post: Posts) => {
             return (
                 <Card key={post._id} data={post} />
             )
           })}
-          {posts.slice(3, 4).map((post: Posts) => {
+        </div>
+      </div>
+      <div className="py-20">
+     <div className="grid grid-cols-2">
+      <div>
+      {posts.slice(0,1).map((post: Posts) => {
             return (
             <Card key={post._id} data={post} />
             )
           })}
-        </div>
       </div>
+      <div></div>
+      </div>
+     </div>
     </div>
   );
 };
