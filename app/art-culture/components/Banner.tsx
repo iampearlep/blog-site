@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import { Fraunces } from "next/font/google";
-import artImg from "@/public/images/art-culture-02.jpg";
 import Card from "@/components/Card";
 import Link from "next/link";
+import Minicta from "@/components/Minicta";
+
 
 
 import { client } from "@/app/lib/sanity.client";
@@ -84,7 +85,7 @@ const Banner = async() => {
         </div>
       </div>
       <div className="py-20">
-     <div className="grid grid-cols-2">
+     <div className="grid grid-cols-2 gap-x-10">
       <div>
       {posts.slice(0,1).map((post: Posts) => {
             return (
@@ -92,7 +93,9 @@ const Banner = async() => {
             )
           })}
       </div>
-      <div></div>
+      <div className="hidden md:block">
+        <Minicta />
+      </div>
       </div>
      </div>
     </div>

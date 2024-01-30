@@ -2,6 +2,7 @@ import { client } from "@/app/lib/sanity.client";
 import { Posts } from "@/interface";
 import Image from "next/image";
  import { Fraunces } from "next/font/google";
+ import Cta from "@/components/Cta"
 
 const fraunces = Fraunces({ subsets: ["latin"] });
 
@@ -46,7 +47,8 @@ description,
 export default async function Page({ params }: { params: { slug: string } }) {
   const post: Posts = await getPostDetails(params.slug);
     return(
-      <div className="px-6 py-6">
+      <div>
+            <div className="px-6 py-6">
         <div>
         <div className="flex flex-col items-center justify-center gap-y-6 md:gap-y-14 pb-5 md:pb-10">
         <div className="w-full h-full">
@@ -160,6 +162,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </div>
         </div>
         </div>
+      </div>
+      <Cta />
       </div>
     )
   }

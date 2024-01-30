@@ -1,3 +1,4 @@
+import Cta from "@/components/Cta"
 import Banner from "./components/Banner"
 
 export default function Page() {
@@ -5,6 +6,7 @@ export default function Page() {
         <main>
             <h1 className="text-3xl text-center font-semibold py-7">Architecture</h1>
             <Banner />
+            <Cta />
         </main>
     )
 }

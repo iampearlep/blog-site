@@ -1,13 +1,13 @@
 import React from "react";
 import Image from "next/image";
 import { Fraunces } from "next/font/google";
-import artImg from "@/public/images/art-culture-04.jpg";
 import Card from "@/components/Card";
 import Link from "next/link";
 import { client } from "@/app/lib/sanity.client";
 import { Posts } from "@/interface";
+import Minicta from "@/components/Minicta";
 
-export const fraunces = Fraunces({ subsets: ["latin"] });
+const fraunces = Fraunces({ subsets: ["latin"] });
 
 async function getPostData() {
   const query = `*[_type == "post" && category._ref in *[_type=="category" && name=="Travel"]._id]{
@@ -80,7 +80,7 @@ const Banner = async() => {
         </div>
       </div>
      <div className="py-20">
-     <div className="grid grid-cols-2">
+     <div className="grid grid-cols-2 gap-x-10">
       <div>
       {posts.slice(1,2).map((post: Posts) => {
             return (
@@ -88,7 +88,9 @@ const Banner = async() => {
             )
           })}
       </div>
-      <div></div>
+      <div className="hidden md:block">
+        <Minicta />
+      </div>
       </div>
      </div>
     </div>

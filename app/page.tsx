@@ -3,7 +3,6 @@ import Feature from "@/components/Feature"
 import Stories from "@/components/Stories"
 import Cta from "@/components/Cta";
 import Socials from "@/components/Socials";
-
 export default function Home() {
   return (
    <main>
