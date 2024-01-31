@@ -1,12 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import { Fraunces } from "next/font/google";
-import archImg from "@/public/images/architecture-03.jpg";
-import { data } from "@/data/data";
 import Card from "./Card";
 import Link from "next/link";
 import { client } from "@/app/lib/sanity.client";
 import { Posts } from "@/interface";
+
 export const fraunces = Fraunces({ subsets: ["latin"] });
 
 async function getPostData() {
@@ -42,17 +41,12 @@ async function getSinglePostData(){
 const Banner = async() => {
   const posts = await getPostData();
   const singlePost = await getSinglePostData();
-  
-  const filterPostsByCategory = (category: string) => {
-    return posts.filter((post: Posts) => post.category === category);
-  };
-  const filteredPosts = filterPostsByCategory("travel"); 
-
+  const dynamicUrl = `/article/${singlePost.slug}`
   return (
     <div className="px-6 py-5">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
         <div className="grid md:col-start-1 md:col-end-10">
-        <Link href={`/article/${singlePost.slug}`}>
+        <Link href="/" as={dynamicUrl}>
           <div>
             <Image
               src={singlePost.coverImage}

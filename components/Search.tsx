@@ -8,6 +8,11 @@ const Search = () => {
     const router = useRouter()
     const [text, setText] = useState('')
     const [query] = useDebounce(text, 500)
+    // const [posts, setPosts] = useState<Posts[]>([]);
+    // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //   e.preventDefault()
+    //   setSearchTerm(e.target.value);
+    // };
 
    
     useEffect(() => {
@@ -17,6 +22,21 @@ const Search = () => {
         router.push(`?search=${query}`)
       }
     }, [query, router])
+
+    // useEffect(() => {
+    //   const fetchProducts = async () => {
+    //       const posts = await client.fetch(`*[_type == "post" && title match "*${searchTerm}*"]`)
+    //       setPosts(posts);
+    //     };
+    //     const timeout = setTimeout(() => {
+    //       if (searchTerm.trim().length >= 2) {
+    //         fetchProducts();
+    //       }
+    //     }, 1000);
+    
+    //     return () => clearTimeout(timeout);
+    // }, [searchTerm])
+
 
   return (
     <div>

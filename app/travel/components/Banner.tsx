@@ -41,11 +41,12 @@ async function getSinglePostData(){
 const Banner = async() => {
   const posts = await getPostData();
   const singlePost = await getSinglePostData();
+  const dynamicUrl = `/article/${singlePost.slug}`
   return (
     <div className="px-6 py-5">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
         <div className="grid md:col-start-1 md:col-end-10">
-        <Link href={`/article/${singlePost.slug}`}>
+        <Link href="/" as={dynamicUrl}>
           <div>
             <Image
               src={singlePost.coverImage}
