@@ -13,7 +13,7 @@ const Socials = () => {
         <div className='flex flex-col gap-10'>
             <div className='flex flex-row justify-between items-center'>
                 <h2>Follow us on social media</h2>
-                <button className='py-1 px-6 border border-[#262c29] rounded-full'>@glitch</button>
+                <button className='py-1 px-6 border border-[#262c29] rounded-full'>@explore</button>
             </div>
             <div className='grid grid-cols-3 md:grid-cols-6 md:gap-x-6 gap-x-4 gap-y-4'>
             <Image

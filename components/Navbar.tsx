@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Fraunces } from "next/font/google";
 import { IoSearch } from "react-icons/io5";
+import Search from "./Search";
 
 export const fraunces = Fraunces({ subsets: ["latin"] });
 
@@ -42,20 +43,13 @@ const Navbar = () => {
           </div>
             </div>
             <div>
-            <div className="hidden md:flex flex-row items-center justify-center  gap-x-8">
-            <button className="">
+            <div className="w-full hidden md:flex flex-row items-center justify-center gap-x-2">
+            <button className="hidden">
               <Link href="">
               About
               </Link>
             </button>
-            <button className="relative">
-              <Link href="/">
-               <div className="flex flex-row gap-x-1 justify-center items-center">
-               <IoSearch  />
-                Search
-               </div>
-              </Link>
-            </button>
+              <Search />
           </div>
             </div>
           </div>
@@ -80,20 +74,13 @@ const Navbar = () => {
               )}
             </button>
                 </div>
-                <div className="flex flex-row gap-x-4">
-                <button className="">
+                <div className="flex flex-row gap-x-2">
+                <button className="hidden">
               <Link href="">
               About
               </Link>
             </button>
-            <button className="relative">
-              <Link href="/">
-               <div className="flex flex-row gap-x-1 justify-center items-center">
-               <IoSearch  />
-                Search
-               </div>
-              </Link>
-            </button>
+            <Search />
                 </div>
                 </div>
             </div>
