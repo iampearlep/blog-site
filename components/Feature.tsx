@@ -3,7 +3,8 @@ import Image from "next/image";
 import { Fraunces } from "next/font/google";
 import Link from "next/link";
 import { client } from "@/app/lib/sanity.client";
-export const fraunces = Fraunces({ subsets: ["latin"] });
+
+const fraunces = Fraunces({ subsets: ["latin"] });
 
 async function getSinglePostData(){
   const query = `*[_type == "post"][0]{
