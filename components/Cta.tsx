@@ -3,7 +3,7 @@ import Image from "next/image";
 import ctaImg from "@/public/images/square-02.jpg"
 import { Fraunces } from "next/font/google";
 
-export const fraunces = Fraunces({ subsets: ["latin"] });
+const fraunces = Fraunces({ subsets: ["latin"] });
 
 
 const Cta = () => {
