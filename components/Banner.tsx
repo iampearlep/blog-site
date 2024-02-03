@@ -6,7 +6,7 @@ import Link from "next/link";
 import { client } from "@/app/lib/sanity.client";
 import { Posts } from "@/interface";
 
-export const fraunces = Fraunces({ subsets: ["latin"] });
+const fraunces = Fraunces({ subsets: ["latin"] });
 
 async function getPostData() {
   const query = `*[_type == "post"][0...12] {

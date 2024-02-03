@@ -43,7 +43,7 @@ const Navbar = () => {
           </div>
             </div>
             <div>
-            <div className="w-full hidden md:flex flex-row items-center justify-center gap-x-2">
+            <div className="w-full hidden md:hidden flex-row items-center justify-center gap-x-2">
             <button className="hidden">
               <Link href="">
               About
