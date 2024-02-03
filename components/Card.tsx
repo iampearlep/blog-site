@@ -8,8 +8,9 @@ import Link from "next/link";
 
 
 const Card: React.FC<CardProps> = ({data}) => {
+  const dynamicUrl = `/article/${data.slug}`
   return (
-   <Link href={`/article/${data.slug}`}>
+   <Link href="/" as={dynamicUrl}>
     <div key={data._id}>
                 <div>
                 <Image

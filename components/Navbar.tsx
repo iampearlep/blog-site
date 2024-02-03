@@ -74,7 +74,7 @@ const Navbar = () => {
               )}
             </button>
                 </div>
-                <div className="flex flex-row gap-x-2">
+                <div className="overflow-x-hidden flex flex-row gap-x-2">
                 <button className="hidden">
               <Link href="">
               About

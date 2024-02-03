@@ -19,7 +19,7 @@ const Search = () => {
       if(!query){
         router.push(`/`)
       } else {
-        router.push(`?search=${query}`)
+        router.push(`/search?q=${query}`)
       }
     }, [query, router])
 
