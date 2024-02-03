@@ -3,7 +3,6 @@ import React from "react";
 import { useState } from "react";
 import Link from "next/link";
 import { Fraunces } from "next/font/google";
-import { IoSearch } from "react-icons/io5";
 import Search from "./Search";
 
 export const fraunces = Fraunces({ subsets: ["latin"] });
@@ -43,7 +42,7 @@ const Navbar = () => {
           </div>
             </div>
             <div>
-            <div className="w-full hidden md:hidden flex-row items-center justify-center gap-x-2">
+            <div className="flex-row items-center justify-center gap-x-2">
             <button className="hidden">
               <Link href="">
               About
