@@ -28,8 +28,8 @@ const SearchResult = () => {
                 "category": category -> name,
                 "coverImage": coverImage.asset -> url,
             }`);
-       // console.log(posts);
-          setPosts(posts);
+        // console.log(posts);
+        setPosts(posts);
       } catch (error) {
         setError(error as Error);
       } finally {
@@ -50,12 +50,10 @@ const SearchResult = () => {
       ) : posts.length === 0 ? (
         <p>No posts found for your search.</p>
       ) : (
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
-           {posts.map((post) => {
-            return(
-                <Card key={post._id} data={post} />
-            )
-           })}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {posts.map((post) => {
+            return <Card key={post._id} data={post} />;
+          })}
         </div>
       )}
     </div>
